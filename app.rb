@@ -27,7 +27,7 @@ end
 get '/visit' do
 	@c = Client.new
 	erb :visit
-end
+end 
 
 post '/visit' do
 
@@ -39,6 +39,11 @@ post '/visit' do
 		erb :visit
 	end
 
+end
+
+get '/bookings' do
+	@clients = Client.order('created_at DESC')
+	erb :bookings
 end
 
 get '/barber/:id' do
